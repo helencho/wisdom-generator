@@ -1,22 +1,26 @@
 let peter = 'https://raw.githubusercontent.com/helencho/wisdom-generator/master/peter.json';
-let backgrounds = ''
+let backgrounds = 'https://raw.githubusercontent.com/helencho/wisdom-generator/master/backgrounds.json';
 
 document.addEventListener('DOMContentLoaded', () => {
+    let quotediv = document.querySelector('#quote');
+    let body = document.querySelector('body');
     fetch(peter)
         .then((res) => {
             return res.json();
-        })
-        .then((quoteArray) => {
-            let quotediv = document.querySelector('#quote');
-            quotediv.innerText = randomQuote(quoteArray);
+        }).then((quoteArray) => {
+            fetch(backgrounds)
+                .then((res) => {
+                    return res.json();
+                }).then((bgArray) => {
+                    let bg = random(bgArray);
+                    body.setAttribute('background-image', `url(${bg})`);
+                    quotediv.innerText = random(quoteArray);
+                })
+
         })
 });
 
 
-const randomQuote = (instructor) => {
-    return instructor[Math.floor(Math.random() * (instructor.length - 1 + 1))];
-}
-
-const randomBackground = () => {
-    // need a random background json file 
+const random = (array) => {
+    return array[Math.floor(Math.random() * (array.length - 1 + 1))];
 }
