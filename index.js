@@ -1,4 +1,5 @@
-let peter = 'https://raw.githubusercontent.com/helencho/various/master/gift/peter.json';
+let peter = 'https://raw.githubusercontent.com/helencho/wisdom-generator/master/peter.json';
+let backgrounds = ''
 
 document.addEventListener('DOMContentLoaded', () => {
     fetch(peter)
