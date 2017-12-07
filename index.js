@@ -52,3 +52,8 @@ var $ = function(id) {
   }
 
 document.addEventListener("click", () => reload());
+
+
+
+
+// We'll miss you Peter -David, Helen, Michelle
