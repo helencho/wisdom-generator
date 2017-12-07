@@ -14,9 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 }).then((bgArray) => {
                     let bg = random(bgArray);
                     body.style.backgroundImage = `url(${bg})`;
+                    body.style.backgroundSize = 'cover';
+                    body.style.height = '100vh';
+                    body.style.backgroundRepeat = 'no-repeat';
                     quotediv.innerText = random(quoteArray);
                 })
-
         })
 });
 
