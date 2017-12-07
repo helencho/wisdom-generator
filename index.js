@@ -13,14 +13,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     return res.json();
                 }).then((bgArray) => {
                     let bg = random(bgArray);
-                    body.setAttribute('background-image', `url(${bg})`);
+                    body.style.backgroundImage = `url(${bg})`;
                     quotediv.innerText = random(quoteArray);
                 })
 
         })
 });
 
-
+// randomly chooses an element from an array 
 const random = (array) => {
-    return array[Math.floor(Math.random() * (array.length - 1 + 1))];
+    return array[Math.floor(Math.random() * (array.length))];
 }
