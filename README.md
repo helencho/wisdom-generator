@@ -9,10 +9,6 @@
 2. shit Peter says
 
 
-![Screenshot](./public/screen1.png) 
-
-![Gif of the generator](./public/screenplay1.gif)
-
 ![Gif of the generator](./public/screenplay2.gif)
 
 
