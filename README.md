@@ -9,7 +9,8 @@
 2. shit Peter says
 
 
-![Gif of the generator](./public/screenplay2.gif)
+![Screenshot](./public/screen1.png) 
+
 
 
 Be enlightened. See it for yourself [here](http://shitpetersays.com/)
