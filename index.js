@@ -6,43 +6,38 @@ document.addEventListener('DOMContentLoaded', () => {
     let quotediv = document.querySelector('#quote');
     let body = document.querySelector('body');
 
+    const getWisdom = () => {
 
-    fetch(backgrounds)
-        .then((res) => {
-            return res.json();
-        }).then((bgArray) => {
-            let bg = random(bgArray);
-            body.style.backgroundImage = `url(${bg})`;
-            body.style.backgroundSize = 'cover';
-            body.style.height = '100vh';
-            body.style.backgroundRepeat = 'no-repeat';
+        fetch(backgrounds)
+            .then((res) => {
+                return res.json();
+            }).then((bgArray) => {
+                let bg = random(bgArray);
+                body.style.backgroundImage = `url(${bg})`;
+                body.style.backgroundSize = 'cover';
+                body.style.height = '100vh';
+                body.style.backgroundRepeat = 'no-repeat';
 
-            fetch(peter)
-                .then((res) => {
-                    return res.json();
-                }).then((quoteArray) => {
-                    text = random(quoteArray)
-                })
-        });
+                fetch(peter)
+                    .then((res) => {
+                        return res.json();
+                    }).then((quoteArray) => {
+                        text = random(quoteArray)
+                    })
+            });
+    }
 
+    // document.addEventListener("click", () => {
+    //     getWisdom(); 
+    // })
 
-    // fetch(peter)
-    //     .then((res) => {
-    //         return res.json();
-    //     }).then((quoteArray) => {
-    //         fetch(backgrounds)
-    //             .then((res) => {
-    //                 return res.json();
-    //             }).then((bgArray) => {
-    //                 let bg = random(bgArray);
-    //                 body.style.backgroundImage = `url(${bg})`;
-    //                 body.style.backgroundSize = 'cover';
-    //                 body.style.height = '100vh';
-    //                 body.style.backgroundRepeat = 'no-repeat';
-    //                 text = random(quoteArray)
-    //             })
-    //     });
+    getWisdom();
 
+    // document.addEventListener("click", () => {
+    //     getWisdom();
+    //     console.log(text)
+    // });
+    
     document.addEventListener("click", () => reload());
 
 });
@@ -52,10 +47,6 @@ const random = (array) => {
     return array[Math.floor(Math.random() * (array.length))];
 }
 
-var $ = function (id) {
-    return document.getElementById(id);
-};
-
 var inc = 0;
 var out = 0;
 var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@$%&';
@@ -64,14 +55,13 @@ var timer;
 var anim = function () {
     inc++;
     if (inc % 7 === 0 && out < text.length) {
-        $('anim').appendChild(document.createTextNode(text[out]));
+        document.getElementById('anim').appendChild(document.createTextNode(text[out]));
         out++;
-
     }
 };
 
 timer = setInterval(anim, 4);
-$('anim').innerHTML = '';
+document.getElementById('anim').innerHTML = '';
 
 function reload() {
     window.location.href = window.location.href;

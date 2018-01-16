@@ -15,7 +15,7 @@ h2 {
   color: white;
   font-size: 4.8rem;
   font-style: italic;
-  top: 40%;
+  top: 32%;
   position: relative;
   margin: 0 auto;
 }
@@ -25,7 +25,7 @@ h2 {
     color: rgba(255, 255, 255, 0.5);
     font-size: 3.2rem;
     /* top: 50%; */
-    bottom: -50%;
+    bottom: -40%;
     position: relative;
     text-align: center;
 }
@@ -39,7 +39,11 @@ h2 {
     font-family: "Open Sans", sans-serif;
 }
 
-@media screen and (max-width: 425px) {
+.center-quote {
+  height: 185px;
+}
+
+@media screen and (max-width: 625px) {
   h2 {
     font-size: 3.3rem;
     top: 25%;
